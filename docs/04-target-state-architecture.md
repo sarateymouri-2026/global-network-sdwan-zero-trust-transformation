@@ -70,17 +70,6 @@ Leverage AI technologies to improve operational efficiency, visibility and decis
 
 ---
 
-# Target-State Architecture
-
-```text
-+--------------------------------------------------+
-|                 Business Services                |
-+--------------------------------------------------+
-                         |
-+--------------------------------------------------+
-|          Identity & Access Management            |
-+--------------------------------------------------+
-
 ## Architecture Overview
 
 ../diagrams/02-target-state-enterprise-architecture.png

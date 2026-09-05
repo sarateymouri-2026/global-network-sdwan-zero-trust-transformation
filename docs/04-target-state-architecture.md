@@ -80,3 +80,9 @@ Leverage AI technologies to improve operational efficiency, visibility and decis
 +--------------------------------------------------+
 |          Identity & Access Management            |
 +--------------------------------------------------+
+
+## Architecture Overview
+
+../diagrams/02-target-state-enterprise-architecture.png
+
+*Figure 1 – SATECH Manufacturing Target-State Enterprise Architecture*

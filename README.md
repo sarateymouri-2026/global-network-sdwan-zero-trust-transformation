@@ -1,4 +1,4 @@
-# Global Network, SD-WAN & Zero Trust Transformation Program
+# Enterprise Network, Cloud Connectivity & Zero Trust Transformation Program
 
 ## Overview
 
@@ -100,3 +100,20 @@ docs/
 ├── 06-zero-trust-framework.md
 ├── 07-cloud-connectivity.md
 ├── 08
+
+## Key Outcomes
+
+- Modernized global connectivity architecture
+- Improved network performance and user experience
+- Enhanced security through identity-driven access controls
+- Simplified telecom and service provider management
+- Increased operational visibility and governance
+- Reduced infrastructure complexity and long-term operational costs
+
+  ## Architecture Domains
+
+The transformation program covers four core domains:
+- Network & Connectivity
+- Cloud & Hybrid Infrastructure
+- Security & Zero Trust
+- Governance & Operations

@@ -1,0 +1,14 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# Draw.io autosave
+*.drawio.bkp
+
+# VS Code
+.vscode/

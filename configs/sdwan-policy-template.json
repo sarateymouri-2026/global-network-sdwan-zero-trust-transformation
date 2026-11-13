@@ -1,0 +1,82 @@
+{
+  "policy_name": "GLOBAL-ENTERPRISE-AAR-POLICY",
+  "version": "1.4.0",
+  "description": "Application-Aware Routing (AAR) and Direct Internet Breakout policy for global branches",
+  "sla_classes": [
+    {
+      "name": "SLA-REALTIME-VOICE-VIDEO",
+      "max_latency_ms": 100,
+      "max_jitter_ms": 20,
+      "max_packet_loss_pct": 0.5
+    },
+    {
+      "name": "SLA-BUSINESS-CRITICAL-ERP",
+      "max_latency_ms": 150,
+      "max_jitter_ms": 40,
+      "max_packet_loss_pct": 1.0
+    },
+    {
+      "name": "SLA-BEST-EFFORT",
+      "max_latency_ms": 300,
+      "max_jitter_ms": 100,
+      "max_packet_loss_pct": 3.0
+    }
+  ],
+  "traffic_rules": [
+    {
+      "sequence": 10,
+      "name": "RULE-UNIFIED-COMMUNICATIONS",
+      "match": {
+        "applications": ["ms-teams", "zoom", "cisco-webex", "sip-rtp"],
+        "vrf_id": 10
+      },
+      "action": {
+        "sla_class": "SLA-REALTIME-VOICE-VIDEO",
+        "preferred_transports": ["DIA-FIBER", "MPLS"],
+        "backup_transports": ["5G-CELLULAR"],
+        "packet_duplication": true,
+        "dscp_marking": "EF"
+      }
+    },
+    {
+      "sequence": 20,
+      "name": "RULE-TRUSTED-SAAS-DIA",
+      "match": {
+        "applications": ["office365", "salesforce", "servicenow", "github"],
+        "vrf_id": 10
+      },
+      "action": {
+        "routing_mode": "DIRECT_INTERNET_ACCESS",
+        "preferred_transports": ["DIA-FIBER", "BROADBAND"],
+        "security_inspection": "DNS_AND_SNI_ONLY",
+        "dscp_marking": "AF31"
+      }
+    },
+    {
+      "sequence": 30,
+      "name": "RULE-CORE-ERP-HYBRID-CLOUD",
+      "match": {
+        "applications": ["sap-s4hana", "internal-git", "sql-database"],
+        "vrf_id": 10
+      },
+      "action": {
+        "sla_class": "SLA-BUSINESS-CRITICAL-ERP",
+        "preferred_transports": ["DIA-FIBER", "MPLS"],
+        "encryption": "IPSEC-AES-256-GCM",
+        "ztna_posture_required": true
+      }
+    },
+    {
+      "sequence": 40,
+      "name": "RULE-IOT-ISOLATED-SEGMENT",
+      "match": {
+        "vrf_id": 30
+      },
+      "action": {
+        "routing_mode": "CENTRALIZED_FIREWALL_STEERING",
+        "allow_inter_vrf": false,
+        "allowed_destinations": ["10.250.40.10/32"]
+      }
+    }
+  ]
+}

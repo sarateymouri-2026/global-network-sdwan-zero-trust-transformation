@@ -1,119 +1,37 @@
-# Enterprise Network, Cloud Connectivity & Zero Trust Transformation Program
+# 🌐 Global Enterprise Network Transformation: SD-WAN & Zero Trust Architecture
 
-## Overview
+[![Security: Zero Trust](https://img.shields.io/badge/Security-Zero%20Trust%20(ZTNA)-blue.svg)](https://en.wikipedia.org/wiki/Zero_trust_security)
+[![Network: SD-WAN & SASE](https://img.shields.io/badge/Network-SD--WAN%20%2F%20SASE-orange.svg)](https://www.cisco.com)
+[![Status: Production Blueprint](https://img.shields.io/badge/Status-Complete%20Blueprint-success.svg)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-This repository presents a strategic enterprise transformation program focused on modernizing network connectivity, improving security posture, and enabling scalable cloud adoption for a multinational organization.
+An enterprise-grade architectural blueprint and implementation framework for modernizing global corporate networks. This repository details the strategic migration from legacy, perimeter-based WAN architectures to a resilient, high-performance **Secure SD-WAN** integrated with **Zero Trust Network Access (ZTNA)** and **Security Service Edge (SASE)** principles.
 
-The project is designed from an architecture, governance, and transformation perspective, demonstrating how network, cloud and security capabilities can be aligned with business objectives, operational resilience, and long-term technology strategy.
+---
 
-## Business Context
+## 📋 Table of Contents
+- [Executive Summary](#-executive-summary)
+- [The Challenge: Why Legacy WANs Fail](#-the-challenge-why-legacy-wans-fail)
+- [Architecture & Core Components](#-architecture--core-components)
+- [Transformation Strategy & Phased Roadmap](#-transformation-strategy--phased-roadmap)
+- [Repository Structure](#-repository-structure)
+- [Key Benefits & Business Impact](#-key-benefits--business-impact)
+- [Contributing & License](#-contributing--license)
 
-Many global organizations face challenges such as:
+---
 
-- Legacy WAN architectures
-- Rising telecommunications costs
-- Inconsistent security controls
-- Limited network visibility
-- Increasing cloud adoption requirements
-- Complex vendor and service provider landscapes
-- Growing demand for secure remote access
+## 🚀 Executive Summary
+As organizations embrace multi-cloud environments, remote workforces, and distributed branch offices, traditional hub-and-spoke MPLS architectures and implicit trust perimeters have become operational bottlenecks and security liabilities. 
 
-This project explores a structured approach to addressing these challenges through network modernization and Zero Trust principles.
+This repository provides a comprehensive reference model for a **Zero Trust SD-WAN transformation**, proving how dynamic software-defined routing and "Never Trust, Always Verify" security policies can coexist to deliver unmatched agility, robust encryption, and granular access control across global enterprises.
 
-## Strategic Objectives
+---
 
-- Modernize enterprise connectivity services
-- Simplify WAN architecture through SD-WAN adoption
-- Improve user experience and application performance
-- Strengthen security through Zero Trust principles
-- Enable secure cloud connectivity
-- Increase operational visibility and governance
-- Reduce operational complexity and long-term costs
+## ⚠️ The Challenge: Why Legacy WANs Fail
+* **Implicit Trust:** Once a user or device connects to the internal network, lateral movement is unrestricted.
+* **Backhauling Inefficiency:** Routing all cloud-bound traffic back through a central data center introduces high latency and degrades user experience.
+* **Complex Attack Surface:** Proliferating remote workers and IoT devices break traditional hardware firewall perimeters.
 
-## Scope
+---
 
-The transformation program covers:
-
-### Network & Connectivity
-
-- Enterprise WAN Strategy
-- SD-WAN Architecture
-- Routing & Switching Standards
-- Internet Breakout Strategy
-- Telecom & Carrier Management
-
-### Security
-
-- Zero Trust Architecture
-- SASE / SSE Design Principles
-- Network Segmentation
-- Firewall Architecture
-- Secure Remote Access
-
-### Cloud & Infrastructure
-
-- Azure Connectivity
-- AWS Connectivity
-- Hybrid Network Architecture
-- Identity & Access Management
-- Infrastructure Services Integration
-
-### Governance
-
-- Operating Model
-- Service Governance
-- Vendor Management
-- Performance Metrics
-- Risk Management
-
-## Project Deliverables
-
-### Architecture
-
-- Current-State Assessment
-- Target-State Architecture
-- SD-WAN Reference Design
-- Zero Trust Framework
-- Cloud Connectivity Architecture
-
-### Strategy
-
-- Business Case
-- Transformation Roadmap
-- Governance Model
-- Risk Register
-
-### Executive Reporting
-
-- KPI Framework
-- Service Performance Dashboard
-- Program Success Metrics
-
-## Repository Structure
-
-docs/
-├── 01-executive-summary.md
-├── 02-business-drivers.md
-├── 03-current-state-assessment.md
-├── 04-target-state-architecture.md
-├── 05-sdwan-strategy.md
-├── 06-zero-trust-framework.md
-├── 07-cloud-connectivity.md
-├── 08
-
-## Key Outcomes
-
-- Modernized global connectivity architecture
-- Improved network performance and user experience
-- Enhanced security through identity-driven access controls
-- Simplified telecom and service provider management
-- Increased operational visibility and governance
-- Reduced infrastructure complexity and long-term operational costs
-
-  ## Architecture Domains
-
-The transformation program covers four core domains:
-- Network & Connectivity
-- Cloud & Hybrid Infrastructure
-- Security & Zero Trust
-- Governance & Operations
+## 🏗️ Architecture & Core Components

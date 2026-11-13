@@ -1,1 +1,54 @@
+<mxfile host="app.diagrams.net" modified="2026-03-31T00:00:00.000Z" agent="Enterprise-Architecture-Tool" version="21.0.0" type="device">
+  <diagram name="Current-State-Legacy" id="legacy-network-01">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Background Container: Data Center -->
+        <mxCell id="dc-box" value="Central Data Center (HQ) - Bottleneck" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="160" width="400" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="legacy-fw" value="Legacy Perimeter Firewall&#xa;(Inspection Bottleneck)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#b85450;fontStyle=1;" vertex="1" parent="dc-box">
+          <mxGeometry x="100" y="180" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mpls-hub" value="Core MPLS Router" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#1ba1e2;fontStyle=1;" vertex="1" parent="dc-box">
+          <mxGeometry x="100" y="80" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="corp-datacenter" value="Internal Apps &amp; Databases&#xa;(Implicit Trust Zone)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#2d7014;fontStyle=1;" vertex="1" parent="dc-box">
+          <mxGeometry x="100" y="320" width="200" height="80" as="geometry" />
+        </mxCell>
 
+        <!-- Branch Offices -->
+        <mxCell id="branch-1" value="Branch Office A&#xa;(Expensive MPLS Link)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#b46504;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="180" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="branch-2" value="Branch Office B&#xa;(High Latency Backhaul)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#b46504;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="440" width="220" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Cloud SaaS -->
+        <mxCell id="saas-cloud" value="Cloud SaaS&#xa;(M365 / Salesforce)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#674ea7;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="740" y="30" width="200" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Connections / Arrows -->
+        <mxCell id="edge-1" value="MPLS WAN" style="endArrow=classic;startArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="branch-1" target="mpls-hub">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-2" value="MPLS WAN" style="endArrow=classic;startArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="branch-2" target="mpls-hub">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-3" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="mpls-hub" target="legacy-fw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-4" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="legacy-fw" target="corp-datacenter">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-5" value="Forced Backhaul (Degraded UX)" style="endArrow=classic;html=1;exitX=0.5;exitY=0;entryX=0;entryY=0.5;" edge="1" parent="1" source="branch-1" target="saas-cloud">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

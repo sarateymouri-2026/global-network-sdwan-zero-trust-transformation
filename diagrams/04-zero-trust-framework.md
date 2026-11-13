@@ -1,5 +1,3 @@
-### 4. `diagrams/04-zero-trust-framework.md`
-```markdown
 # Zero Trust Network Access (ZTNA) Verification Workflow
 
 ```mermaid
